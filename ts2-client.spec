@@ -11,6 +11,8 @@ URL:		http://www.teamspeak.org/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define         _noautoprovfiles        %{_libdir}/%{name}/.*\.so.*
+
 %description
 TeamSpeak was primarily designed to work for people who are behind a
 NAT router (share internet). Further more it was designed for gamers.
