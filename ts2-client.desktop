@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=TeamSpeak
+Comment=TeamSpeak
+Exec=TeamSpeak
+Icon=ts2.xpm
+Terminal=false
+Categories=Qt;Audio;Game
