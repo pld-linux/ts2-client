@@ -1,4 +1,5 @@
 Summary:	TeamSpeak2 client
+Summary(pl):	Klient TeamSpeak2
 Name:		ts2-client
 Version:	rc2_2032
 Release:	1
@@ -33,7 +34,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/ts2}
 
 install TeamSpeak.bin $RPM_BUILD_ROOT%{_bindir}/TeamSpeak.bin
 sed -e 's#=%installdir%#=%{_prefix}/lib/ts2#;s#%installdir%#%{_bindir}#' TeamSpeak > $RPM_BUILD_ROOT%{_bindir}/TeamSpeak
-install lib* $RPM_BUILD_ROOT%{_libdir}/ts2/
+install lib* $RPM_BUILD_ROOT%{_libdir}/ts2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
