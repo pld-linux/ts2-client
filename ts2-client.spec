@@ -5,11 +5,11 @@ Version:	rc2_2032
 Release:	2
 License:	Freeware
 Group:		Applications/Communications
-Source0:	ftp://webpost.teamspeak.org/releases/ts2_client_%{version}.tar.bz2
+Source0:	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/ts2_client_%{version}.tar.bz2
 # Source0-md5:	e93d17a25e07b1cbe400e4eb028ca8f8
 Source1:	%{name}.sh
 Source2:	%{name}.desktop
-URL:		http://www.teamspeak.org/
+URL:		http://www.goteamspeak.com/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
