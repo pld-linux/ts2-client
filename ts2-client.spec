@@ -35,7 +35,10 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/ts2}
 
 install TeamSpeak.bin $RPM_BUILD_ROOT%{_bindir}/TeamSpeak.bin
-sed -e 's#=%installdir%#=%{_prefix}/lib/ts2#;s#%installdir%#%{_bindir}#' TeamSpeak > $RPM_BUILD_ROOT%{_bindir}/TeamSpeak
+sed -e '
+	s#=%installdir%#=%{_prefix}/lib/ts2#;
+	s#%installdir%#exec %{_bindir}#
+' TeamSpeak > $RPM_BUILD_ROOT%{_bindir}/TeamSpeak
 install lib* $RPM_BUILD_ROOT%{_libdir}/ts2
 
 %clean
