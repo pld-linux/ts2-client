@@ -11,7 +11,7 @@ URL:		http://www.teamspeak.org/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _noautoprovfiles        %{_libdir}/ts2/.*\.so.*
+%define		_noautoprovfiles	%{_libdir}/ts2/.*\.so.*
 
 %description
 TeamSpeak was primarily designed to work for people who are behind a
