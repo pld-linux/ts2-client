@@ -2,11 +2,13 @@ Summary:	TeamSpeak2 client
 Summary(pl):	Klient TeamSpeak2
 Name:		ts2-client
 Version:	rc2_2032
-Release:	1
+Release:	1.10
 License:	Freeware
 Group:		Applications/Communications
 Source0:	ftp://webpost.teamspeak.org/releases/ts2_client_%{version}.tar.bz2
 # Source0-md5:	e93d17a25e07b1cbe400e4eb028ca8f8
+Source1:	%{name}.sh
+Source2:	%{name}.desktop
 URL:		http://www.teamspeak.org/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,14 +34,18 @@ przy pomocy kodeka CELP z maksimum 650 bajtów/sekundê.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/ts2}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/ts2} \
+	$RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir},%{_datadir}/ts2/sounds}\
 
-install TeamSpeak.bin $RPM_BUILD_ROOT%{_bindir}/TeamSpeak.bin
-sed -e '
-	s#=%installdir%#=%{_prefix}/lib/ts2#;
-	s#%installdir%#exec %{_bindir}#
-' TeamSpeak > $RPM_BUILD_ROOT%{_bindir}/TeamSpeak
+install %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/TeamSpeak
+install TeamSpeak.bin $RPM_BUILD_ROOT%{_libdir}/ts2/TeamSpeak
 install lib* $RPM_BUILD_ROOT%{_libdir}/ts2
+
+install sounds/*.wav $RPM_BUILD_ROOT%{_datadir}/ts2/sounds
+ln -s ../../share/ts2/sounds $RPM_BUILD_ROOT%{_libdir}/ts2
+
+install icon.xpm $RPM_BUILD_ROOT%{_pixmapsdir}/ts2.xpm
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}/ts2.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,3 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc manual/* Readme.txt clicense.txt
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/ts2
+%attr(644,root,root) %{_desktopdir}/*
+%attr(644,root,root) %{_pixmapsdir}/*
+%{_datadir}/ts2
