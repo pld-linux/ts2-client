@@ -2,7 +2,7 @@ Summary:	TeamSpeak2 client
 Summary(pl):	Klient TeamSpeak2
 Name:		ts2-client
 Version:	rc2_2032
-Release:	2
+Release:	3
 License:	Freeware
 Group:		Applications/Communications
 Source0:	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/ts2_client_%{version}.tar.bz2
