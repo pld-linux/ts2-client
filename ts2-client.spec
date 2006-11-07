@@ -55,6 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc manual/* Readme.txt clicense.txt
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/ts2
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_datadir}/ts2
