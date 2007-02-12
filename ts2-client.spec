@@ -1,5 +1,5 @@
 Summary:	TeamSpeak2 client
-Summary(pl.UTF-8):   Klient TeamSpeak2
+Summary(pl.UTF-8):	Klient TeamSpeak2
 Name:		ts2-client
 Version:	rc2_2032
 Release:	3
